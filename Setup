@@ -9,7 +9,7 @@ Spawning Items on Roads/Sidewalks
 You'll need to create a function that spawns these items randomly along the roads and sidewalks. This function should be triggered at certain intervals or events, such as when a player joins the server or periodically as part of the gameplay loop.##
 ##
 Here's an example function for spawning items:
-'''
+```
     function SpawnRoadItems()
         local items = {
             { name = "Cigarettes", model = "prop_cs_ciggy_01", chance = 50 },
@@ -36,13 +36,14 @@ Here's an example function for spawning items:
             end
         end
     end
-    '''
+    ```
 --
 --
 Utility Functions
 In the above code, we use a utility function GetRandomCoordsOnRoad to get random coordinates on a specific road hash.
 
 (lua)
+```
 function GetRandomCoordsOnRoad(roadHash)
     local minZ, maxZ = -100.0, 100.0 -- Adjust the min and max Z values as needed
     for i = 1, 100 do -- Attempt to find a valid coordinate 100 times (adjust as needed)
@@ -60,6 +61,7 @@ function GetRandomCoordsOnRoad(roadHash)
 
     return false
 end
+```
 Triggering Item Spawning
 You can trigger the SpawnRoadItems() function when a player joins the server or at specific intervals using FiveM's events and/or timers.
 
